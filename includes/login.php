@@ -85,21 +85,21 @@
 					}
 					else
 					{
-						echo "Votre compte n'est pas actif";
+						echo '<script type="text/javascript">alert("Vous devez activer votre compte, verifiez votre boite mail !");</script>';
 					}
 				}
 				else
 				{
-					echo "Le mot de passe est incorecte";
+					echo '<script type="text/javascript">alert("Le mot de passe est incorecte");</script>';
 				}
 			}
 			else
 			{
-				echo "le compte portant l'email " . $lemail. " n'existe pas";
+				echo '<script type="text/javascript">alert("le compte portant cet email n\'existe pas");</script>';
 			}
 		}
 
-		else{ echo "Veuillez remplire l'ensemble des champ";}
+		else{echo '<script type="text/javascript">alert("Veuillez remplire l\'ensemble des champs");</script>';}
 	}
 
 ?>

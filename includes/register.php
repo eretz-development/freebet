@@ -68,23 +68,23 @@
 						// Fermeture de la connexion    
 						//...
 						mail($destinataire, $sujet, $message, $entete) ; // Envoi du mail
-						echo "Un mail vous a ete envoye, verifiez votre boite de reception pour confirmer votre inscription";
+						echo '<script type="text/javascript">alert("Un mail vous a ete envoye, verifiez votre boite de reception pour confirmer votre inscription");</script>';
 							exit();
 
 						} else {
-							echo "Ce pseudo est deja utilisée";
+							echo '<script type="text/javascript">alert("Ce nom est deja utilisé");</script>';
 						}
 					
 			
 					}
 
 					else{
-						echo "cet email existe deja";
+						echo '<script type="text/javascript">alert("Cet email existe deja");</script>';
 					}
 				}
 
 				else{
-					echo "les deux mots de passe ne sont pas indentiques";
+					echo '<script type="text/javascript">alert("Les deux mots de passe ne sont pas indentiques");</script>';
 				}
 
 			}

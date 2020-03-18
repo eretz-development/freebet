@@ -200,7 +200,6 @@ body{
 
 .grid-container{
 	margin-bottom: 60px;
-	margin-top:120px;
 	display: grid;
 	grid-template-columns:auto auto auto auto;
 	grid-gap: 30px 30px;

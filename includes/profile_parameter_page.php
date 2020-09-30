@@ -83,7 +83,6 @@
 		}
 		/* ---------------- */
 		main{
-			margin-top:110px;
 			margin-left:30px;
 			font-size: 35px;
 			font-family:'sporo';

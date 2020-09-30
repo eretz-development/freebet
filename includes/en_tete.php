@@ -46,7 +46,7 @@
 							<a href="/freebet/includes/bet_page.php">Mes paris</a>
 							<a href="/freebet/includes/plus_de_point_page.php">Plus de points</a>
 							<br>
-							<?php require_once 'includes/deconnexion.php'; ?>
+							<?php require_once 'deconnexion.php'; ?>
 						</div>
 					</li>
 				</ul>
@@ -90,9 +90,9 @@ html{
 	height: 100%;
 }
 
-body { 
-	margin: 0px; 
-	padding: 0px; 
+body {
+	margin: 0px;
+	padding: 0px;
 	width: 100%;
 	height: 100%;
 }
@@ -110,7 +110,7 @@ body {
 	  display: block;
 	}
   }
-  
+
   @media screen and (max-width: 600px) {
 	.topnav.responsive {position: relative;}
 	.topnav.responsive .icon {
@@ -181,7 +181,7 @@ li{
 	cursor: pointer;
 	transition: all 0.2s;
 	text-decoration: none;
-	
+
 }
 .nav li{
 	display: inline-block;
@@ -264,10 +264,10 @@ li{
   .dropdown-user a:hover {
 	color: #d6d6d6;
   }
-  
+
     .dropdown2:hover .dropdown-user {
 	display:block;
 	cursor: pointer;
-	
+
   }
 </style>

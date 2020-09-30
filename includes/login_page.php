@@ -12,7 +12,7 @@
 		<main>
 			<div id="login_block">
 				<div id="connexion" >Connexion</div>
-				<span style="color:white">Vous n'avez pas de compte? <a href="/freebet/includes/login_page.php">Inscrivez-vous</span></a>
+				<span style="color:white">Vous n'avez pas de compte? <a href="/freebet/includes/registration_page.php">Inscrivez-vous</span></a>
 				<?php	global $db; ?>
 				<form method="post" class="login">
 				<div id="email_block">
@@ -52,7 +52,7 @@ body{
  background-attachment: fixed;
  background-size: cover;
  background-position: top;
- background-image:url("../skins/markus-spiske-BfphcCvhl6E-unsplash.jpg");
+ background-image:url("/freebet/skins/markus-spiske-BfphcCvhl6E-unsplash.jpg");
  width: 100%;
  height: 100%;
  letter-spacing: 0.02em;

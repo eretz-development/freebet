@@ -14,7 +14,7 @@
 
 	<main>
             <h1>Contactez nous</h1>
-            <p>Pour toutes questions. problemes ou recommendations,<br>vous pouvez nous contactez via le formulaire ci dessous et nous vous repondrons avec plaisir dans les plus bref delais</p>
+            <p>Pour toutes questions, problemes ou recommendations,<br>vous pouvez nous contactez via le formulaire ci dessous<br>et nous vous repondrons avec plaisir dans les plus bref delais</p>
 				<!-- Main -->
 					<div id="main">
 						<!-- Content -->
@@ -62,25 +62,25 @@
 body{
 	text-align:center;
 	margin:0px;
+	background-color:black;
 }
 
 main{
 	height:min-content;
 	margin-right:auto;
 	margin-left:auto;
-	margin-top:100px;
 	margin-bottom:100px;
 	display:block;
 	
 	}
 main h1{
-	font-family:'sporo';
-	color: #557de9;
+	font-family: Exo2-Regular;
+	color: white;
 	font-size:40px;
 }
 main p{
-    font-family:'sporo';
-	color: #557de9;
+	font-family: Exo2-Regular;
+	color: white;
 	font-size:25px;
 }
 
@@ -91,17 +91,16 @@ fieldset{
 }
 input{
 	border-style: solid;
-	border-color:#557de9;
+	color: white;
 	outline: none;
 	padding: 4px;
 	border-radius: 4px;
 	resize: vertical;
-	width:200px;
+	width:400px;
 
 }
 textarea{
 	border:2px solid;
-	border-color:#557de9;
 	outline: none;
 	padding: 4px;
 	border-radius: 4px;
@@ -113,8 +112,8 @@ textarea{
 input[type='submit']{
 	margin-right:auto;
 	margin-left:auto;
-    font-family:'sporo';
-	color: white;
+	font-family: Exo2-Regular;
+	color: black;
 	font-size:20px;
     display: block;
     padding: 10px 20px;

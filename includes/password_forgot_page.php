@@ -96,18 +96,17 @@
 		    cursor: pointer;
 		}
 
-	</style>
 
-
-</body>
-</html>
-
-<style media="screen">
-body{
+		body{
 	margin:0px;
 }
     #password_forgot_block {
 		margin-bottom: 250px;
 
     }
-  </style>
+	</style>
+
+
+</body>
+</html>
+

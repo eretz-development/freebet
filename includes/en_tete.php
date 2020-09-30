@@ -228,9 +228,10 @@ li{
 .user{
 	margin-right:auto;
 	margin-left: auto;
-	height:fit-content;
-	margin-top: auto;
-	margin-bottom: auto;
+	margin-top: -10px;
+}
+.user svg{
+
 }
 .user ul a {
 	font-family: Exo2-Regular;
@@ -244,6 +245,7 @@ li{
 	color: #d6d6d6;
 }
   .dropdown-user {
+	  left:86%;
 	position: absolute;
 	display: none;
 	z-index: 1;

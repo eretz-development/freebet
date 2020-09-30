@@ -182,7 +182,6 @@ body{
 
 main{
 	margin-bottom: 60px;
-	margin-top:100px;
 	display:flex;
 	}
 

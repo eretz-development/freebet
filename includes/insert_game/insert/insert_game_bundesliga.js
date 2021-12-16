@@ -8,13 +8,38 @@ function liste_match_foot(data){
     var sport = 'foot';
   }
 
-    var valeur_match = document.getElementById("valeur_match_bundesliga").value ;
-    console.log(valeur_match);
+  var valeur_match = document.getElementById("valeur_match_bundesliga").value ;
+  console.log(valeur_match);
+
+  if (obj.data[valeur_match].home_team == obj.data[valeur_match].teams[0]){
+    var home_team = obj.data[valeur_match].teams[0];
+    var visit_team = obj.data[valeur_match].teams[1];
+
+    var home_team_odd = obj.data[valeur_match].sites[0].odds.h2h[0];
+    var visit_team_odd = obj.data[valeur_match].sites[0].odds.h2h[1];
+
+  } else if (obj.data[valeur_match].home_team == obj.data[valeur_match].teams[1]){
+    var home_team = obj.data[valeur_match].teams[1];
+    var visit_team = obj.data[valeur_match].teams[0];
+
+    var home_team_odd = obj.data[valeur_match].sites[0].odds.h2h[1];
+    var visit_team_odd = obj.data[valeur_match].sites[0].odds.h2h[0];
+  }
+
+  var game_time_start = obj.data[valeur_match].commence_time;
+
     document.getElementById("sport").value = sport;
     document.getElementById("league").value = obj.data[valeur_match].sport_nice;
-    document.getElementById("home_team").value = obj.data[valeur_match].teams[0];
-    document.getElementById("home_team_odd").value = obj.data[valeur_match].sites[0].odds.h2h[0];
-    document.getElementById("visit_team_odd").value = obj.data[valeur_match].sites[0].odds.h2h[1];
-    document.getElementById("visit_team").value = obj.data[valeur_match].teams[1];
+    document.getElementById("home_team").value = home_team;
+    document.getElementById("home_team_odd").value = home_team_odd;
+    document.getElementById("tie_game_odd").value = obj.data[valeur_match].sites[0].odds.h2h[2];
+    document.getElementById("visit_team_odd").value = visit_team_odd;
+    document.getElementById("visit_team").value = visit_team;
+    document.getElementById("date_game").value = game_time_start;
+
+    modify_league_name();
+    modify_team_name_soccer();
+
     document.getElementById("game").click();
+
 }

@@ -36,6 +36,7 @@
 
     <script src="../../jquery-3.4.1.js"></script>
     <script src="../../ajax.js"></script>
+		<script src="../modify_name_result.js"></script>
     <script src="../insert/insert_result_bundesliga.js"></script>
 </body>
 

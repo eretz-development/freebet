@@ -7,28 +7,30 @@
   </head>
   <body>
 <footer>
-    <p>Copyright 2018 E-Billet | Nous Contacter: 01 02 03 04 05 | e-mail: sav.ebillet@ebillet.com</p>
+    <p>Copyright 2020 Freebet | <a href="/freebet/includes/contact.php">Nous Contacter</a> | e-mail: support@freebet.com</p>
 </footer>
 
 
   <style media="screen">
 @font-face{
-  font-family:'font2';
-  src: url(/font/MADE-TOMMY-Bold_PERSONAL-USE.ttf);
+  font-family:'Exo2-Regular';
+  src: url(/freebet/font/Exo_2/Exo2-Regular.ttf);
 }
     footer {
-      font-family:'font2';
-      font-size:10px;
+      font-family:'Exo2-Regular';
+      font-size:15px;
+      margin:10px;
     	text-align: center;
-      background-color: #557de9;
+      background-color: transparent;
       height: 30px;
       color: white;
       position:fixed;
       bottom:0;
       right:0;
       left:0;
-
-
+    }
+    a{
+      color:white;
     }
   </style>
 

@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Freebet</title>
+		<link rel="icon" type="image/ico" href="/freebet/img/favicon.ICO" />
 		<link rel="StyleSheet" href="canvas.css" />
 		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js"></script>
 	</head>
@@ -12,7 +13,8 @@
 	<div id="back_ek1">
 	<?php require_once 'includes/en_tete.php'; ?>
 	<div id="bienvenue_sur_freebet___le_premier_site_de_paris_en_ligne__vraiment_gratuit_" >
-		Bienvenue sur Freebet !<br/>Le premier site de paris en ligne <br/>Vraiment Gratuit.
+	<div id="wheel"></div>
+		Bienvenue sur Freebet,<br/>le premier site de paris en ligne<br/>vraiment GRATUIT !
 	</div>
 	<div id="forme_3"  ></div>
 	<a href="#ek_2">  <!-- Link to your content ID -->
@@ -34,9 +36,6 @@
 			<div id="_25_"  >
 				<img src="skins/_25__ek1.png" id="_25__ek1"/>
 			</div>
-			<div id="_10_"  >
-				<img src="skins/_10__ek1.png" id="_10__ek1" />
-			</div>
 		</div>
 		<div id="tentez_de_gagner_des_lots_parmis_des_centaines" >
 				Tentez de gagner des lots<br/>parmi des centaines
@@ -54,7 +53,7 @@
 			<img src="skins/calque_3_ek1.png" id="calque_3_ek1" />
 		</div>
 		<div id="regardez_des_pubs__pour_obtenir_plus__de_points_et_pariez_les_sur_votre_equipe_prefer_e_" >
-			Regardez des pubs <br/>pour obtenir plus <br/>de points et pariez-les<br/>sur votre equipe prefer<span class="char">%C3%A9e</span>.
+			Regardez des pubs <br/>pour obtenir plus <br/>de points et pariez-les<br/>sur votre <span class="char">%C3%A9</span>quipe pr<span class="char">%C3%A9</span>f<span class="char">%C3%A9</span>r<span class="char">%C3%A9</span>e
 		</div>
 		<div id="forme_4"  ></div>
 		<a href="#ek_4">  <!-- Link to your content ID -->
@@ -63,13 +62,13 @@
 			</div>
         </a>
 	</div>
-			
+
 	<div id="ek_4"  >
 		<div id="ou_sur_les_milliers_d_autres__matchs_disponibles_chaque__semaines_" >
 			Ou sur les milliers d'autres<br/> matchs disponibles chaque<br/> semaine.
 		</div>
 		<div id="n_attendez_plus_et_tentez_votre_chance_" >
-			N'attendez plus et<br/>tentez votre chance.
+			N'attendez plus et<br/>tentez votre chance...
 		</div>
 		<div id="forme_5"  ></div>
 		<div id="s_inscrire" >
@@ -87,6 +86,75 @@
         </a>
 	</div>
 
-	<script>var specialChars = document.querySelectorAll("span.char"); for(var c=0; c<specialChars.length; c++){ specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML); }</script>
+	<script>
+	var specialChars = document.querySelectorAll("span.char");
+	for(var c=0; c<specialChars.length; c++){
+		specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML);
+	}
+	const ek1 = document.getElementById('back_ek1');
+	// ek1.onwheel = scroll1;
+	const ek2 = document.getElementById('ek_2');
+	// ek2.onwheel = scroll2;
+	const ek3 = document.getElementById('ek_3');
+	// ek3.onwheel = scroll3;
+	const ek4 = document.getElementById('ek_4');
+	// ek4.onwheel = scroll4;
+	ek1.addEventListener('wheel', function(event)
+	{
+		if (event.deltaY < 0)
+		{
+		}
+		else if (event.deltaY > 0)
+		{
+			window.location.href="#ek_2"
+		}
+	});
+	ek2.addEventListener('wheel', function(event)
+	{
+		if (event.deltaY < 0)
+		{
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+		else if (event.deltaY > 0)
+		{
+			window.location.href="#ek_3_start"
+		}
+	});
+	ek3.addEventListener('wheel', function(event)
+	{
+		if (event.deltaY < 0)
+		{
+			window.location.href="#ek_2"
+		}
+		else if (event.deltaY > 0)
+		{
+			window.location.href="#ek_4"
+		}
+	});
+	ek4.addEventListener('wheel', function(event)
+	{
+		if (event.deltaY < 0)
+		{
+			window.location.href="#ek_3_start"
+		}
+		else if (event.deltaY > 0)
+		{
+		}
+	});
+	// function scroll1(event) {
+	// 	window.location.href="#ek_2"
+	// }
+	// function scroll2(event) {
+	// 	window.location.href="#ek_3_start"
+	// }
+	// function scroll3(event) {
+	// 	window.location.href="#ek_4"
+	// }
+	// function scroll4(event) {
+	// 	document.body.scrollTop = 0;
+  	// 	document.documentElement.scrollTop = 0;
+  	// }
+	</script>
 	</body>
 </html>

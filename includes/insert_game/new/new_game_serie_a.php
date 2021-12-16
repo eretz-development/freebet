@@ -4,7 +4,7 @@
 	{
 		extract($_POST);
 
-		$q = $db->prepare("INSERT INTO game(sport,ligue,equipe_une,equipe_deux,cote_equipe_une,cote_equipe_deux) VALUES(:sport,:ligue,:equipe_une,:equipe_deux,:cote_equipe_une,:cote_equipe_deux)");
+		$q = $db->prepare("INSERT INTO game_with_equality(sport,ligue,equipe_une,equipe_deux,cote_equipe_une,cote_nul,cote_equipe_deux,date_game) VALUES(:sport,:ligue,:equipe_une,:equipe_deux,:cote_equipe_une,:cote_nul,:cote_equipe_deux,:date_game)");
 	$q->execute
 	([
 		'sport' => $_POST['sport'],
@@ -12,7 +12,9 @@
 		'equipe_une' => $_POST['home_team'],
 		'equipe_deux' => $_POST['visit_team'],
 		'cote_equipe_une' => $_POST['home_team_odd'],
-		'cote_equipe_deux' => $_POST['visit_team_odd']
+		'cote_nul' => $_POST['tie_game_odd'],
+		'cote_equipe_deux' => $_POST['visit_team_odd'],
+		'date_game' => $_POST['date_game']
 	]);
 
 		$_SESSION['valeur_match_serie_a'] = $_SESSION['valeur_match_serie_a'] + 1 ;

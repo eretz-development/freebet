@@ -9,7 +9,6 @@
 	<body>
 	<?php require_once 'en_tete.php'; ?>
 		<!-- register -->
-		<br>
 		<main>
 			<div class="img">
 				<img src="skins/football_01.png" alt="Football">
@@ -52,9 +51,8 @@
 				<div id="j_accepte_toutes_les_conditions_g_n_rales" >
 					<label for="checkbox" id="check" onclick="show(this)"></label>
 					<input type="checkbox" id="checkbox" name="checkbox" required/>
-					<p>J'accepte toutes les <a href="#">Conditions G<span class="char">%C3%A9n</span>n<span class="char">%C3%A9</span>rales</a></p>
+					<p>J'accepte les <a href="conditions-generales-utilisation-freebet.pdf">Conditions G<span class="char">%C3%A9</span>n<span class="char">%C3%A9</span>rales d'Utilisation</a></p>
 				</div>
-				<br>
 					<input type="submit" name="formsend" id="formsend" value="S'inscrire">
 				</form>
 				<?php include 'register.php'; ?>
@@ -73,12 +71,11 @@ body{
 	width:100%;
 	height:100%;
 	background-color:black;
-	overflow: hidden;
+	overflow:hidden;
 }
 
 main{
 	display:flex;
-	
 }
 div#register_block{
 	font-family: Exo2-Regular;
@@ -109,7 +106,7 @@ div.img{
 .textfield{
 	border-top: hidden;
 	border-left: hidden;
-	border-right: hidden; 
+	border-right: hidden;
 	outline:none;
 	font-family: Exo2-Regular;
 	font-size: 15px;

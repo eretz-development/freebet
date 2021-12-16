@@ -24,8 +24,8 @@
 							<a href="/freebet/includes/football.php">Football</a>
 							<a href="/freebet/includes/basket_ball.php">Basketball</a>
 							<a href="/freebet/includes/rugby.php">Rugby</a>
-							<a href="/freebet/includes/american_football.php">Hockey</a>
-							<a href="/freebet/includes/hockey.php">Football Americain</a>
+							<a href="/freebet/includes/hockey.php">Hockey</a>
+							<a href="/freebet/includes/american_football.php">Football Americain</a>
 						</div>
 					</li>
 					<li><a href="/freebet/includes/recompense_page.php">R<span class="char">%C3%A9c</span>ompenses</a></li>
@@ -59,8 +59,8 @@
 							<a href="/freebet/includes/football.php">Football</a>
 							<a href="/freebet/includes/basket_ball.php">Basketball</a>
 							<a href="/freebet/includes/rugby.php">Rugby</a>
-							<a href="/freebet/includes/american_football.php">Hockey</a>
-							<a href="/freebet/includes/hockey.php">Football Americain</a>
+							<a href="/freebet/includes/hockey.php">Hockey</a>
+							<a href="/freebet/includes/american_football.php">Football Americain</a>
 						</div>
 					</li>
 					<li><a href="/freebet/includes/recompense_page.php">R<span class="char">%C3%A9c</span>ompenses</a></li>
@@ -90,9 +90,9 @@ html{
 	height: 100%;
 }
 
-body {
-	margin: 0px;
-	padding: 0px;
+body { 
+	margin: 0px; 
+	padding: 0px; 
 	width: 100%;
 	height: 100%;
 }
@@ -110,7 +110,7 @@ body {
 	  display: block;
 	}
   }
-
+  
   @media screen and (max-width: 600px) {
 	.topnav.responsive {position: relative;}
 	.topnav.responsive .icon {
@@ -181,7 +181,7 @@ li{
 	cursor: pointer;
 	transition: all 0.2s;
 	text-decoration: none;
-
+	
 }
 .nav li{
 	display: inline-block;
@@ -266,10 +266,10 @@ li{
   .dropdown-user a:hover {
 	color: #d6d6d6;
   }
-
+  
     .dropdown2:hover .dropdown-user {
 	display:block;
 	cursor: pointer;
-
+	
   }
 </style>

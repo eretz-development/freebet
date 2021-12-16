@@ -295,6 +295,8 @@ main{
 	overflow:hidden;
 	border-radius: 4px;
 	line-height: 130%;
+	font-family:'sporo';
+
 	
 }
 .equipe1, .equipe2{

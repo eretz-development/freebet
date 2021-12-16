@@ -17,5 +17,4 @@ function liste_match_foot(data){
     document.getElementById("visit_team_odd").value = obj.data[valeur_match].sites[0].odds.h2h[1];
     document.getElementById("visit_team").value = obj.data[valeur_match].teams[1];
     document.getElementById("game").click();
-
 }

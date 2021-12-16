@@ -6,17 +6,13 @@
     <title></title>
   </head>
   <body>
-<footer>
+<!-- <footer>
     <p>Copyright 2018 E-Billet | Nous Contacter: 01 02 03 04 05 | e-mail: sav.ebillet@ebillet.com</p>
-</footer>
+</footer> -->
 
 
   <style media="screen">
-@font-face{
-  font-family:'font2';
-  src: url(/font/MADE-TOMMY-Bold_PERSONAL-USE.ttf);
-}
-    footer {
+    /* footer {
       font-family:'font2';
       font-size:10px;
     	text-align: center;
@@ -27,9 +23,7 @@
       bottom:0;
       right:0;
       left:0;
-
-
-    }
+    } */
   </style>
 
   </body>

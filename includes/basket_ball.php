@@ -171,13 +171,25 @@
 </html>
 
 <style media="screen">
+
+@font-face{
+  font-family:'sporo';
+  src: url(/freebet/font/Exo_2/Exo2-Regular.ttf);
+}
+@font-face{
+  font-family:'font2';
+  src: url(/freebet/font/Exo_2/Exo2-Regular.ttf);
+}
 body{
 	margin:0px;
+	padding-right:30px;
 	background-image: url("../img/rosie-yang-Zq4XzAkLjOE-unsplash.jpg");
 	background-color: #ffff; /* Used if the image is unavailable */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+	background-attachment: fixed;
+
 }
 
 main{
@@ -192,16 +204,19 @@ main{
 	padding:10px;
 	text-align:center;
 	background-color: white;
-	border:5px solid #557de9;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width:700px;
 	height: fit-content;
 	overflow:hidden;
 	border-radius: 4px;
 	line-height: 130%;
+	font-family:'sporo';
+
 }
 .equipe1, .equipe2{
 	font-family:'sporo';
-	font-size:35px;
+	font-size:30px;
+
 }
 .vs, .date, .ligue{
 	font-family:'font2';
@@ -212,25 +227,30 @@ main{
 }
 
 #cote1,#cotex,#cote2{
-	border:3px dashed #557de9;
 	font-family:'font2';
 	font-size:20px;
 	width: 50px;
 	height: 20px;
 	border-radius: 4px;
 	padding:5px;
-	color:  #557de9;
 	text-align:center;
-
+	transition:all 0.2s;
 }
+#cote1:hover,#cotex:hover,#cote2:hover{
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+	cursor:pointer;
+}
+
 form{
 	display:inline-block;
 }
 #resultat{
 	width: fit-content;
-	height: 40px;
-	border:3px solid #557de9;
-    border-radius: 4px;
+	height: 38px;
+	border:2px solid black;
+	border-top: hidden;
+	border-left: hidden;
+	border-right: hidden; 
 	font-family:'sporo';
 	outline:none;
 	cursor:pointer;
@@ -238,31 +258,39 @@ form{
 
 }
 .mise{
+	border:2px solid black;
+	border-top: hidden;
+	border-left: hidden;
+	border-right: hidden; 
 	width: 80px;
-	height: 20px;
-	padding: 17px;
+	height: 38px;
+	padding: 10px;
+	color: black;
     display: inline-block;
-	border:3px solid #557de9;
-    border-radius: 4px;
     box-sizing: border-box;
 	font-family:'font2';
 	outline:none;
+	font-size: 20px;
+	margin-right:1em;
+	margin-left:1em;
 }
 .btn-ok{
-	width: 40px;
+	width: 80px;
 	height: 38px;
-	border:3px solid #557de9;
-    border-radius: 4px;
-	background-color: #557de9;
-    color: white;
+	border-radius:4px;
+    color: black;
 	text-align:center;
 	cursor:pointer;
 	font-family:'sporo';
 	font-size: 20px;
 	outline:none;
+	border:none;
+	background-color:transparent;
+	transition: all 0.1s linear;
 }
 .btn-ok:hover{
-    background-color:#719CE1;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 table {
@@ -284,13 +312,12 @@ table {
 	background-color:white;
 	padding:30px;
 	text-align:center;
-	border:5px solid #557de9;
-	border-radius:4px;
+	border:1px solid black;
 	z-index: 1; /* Le contenu doit s'afficher en arrière plan. */
 }
 .side_nav a{
 	text-decoration:none;
-	color:#557de9;
+	color:black;
 }
 /*------btn-filtre------*/
 @import url(https://fonts.googleapis.com/css?family=PT+Sans);
@@ -309,26 +336,27 @@ button{
 }
 .btn-filtre{
 	font-family:'font2';
-	color: #557de9;
+	color: black;
 	font-size:20px;
     display: block;
     padding: 15px 25px;
+	width:200px;
 }
 button::before, button::after{
   content:"";
   width: 0;
-  height: 5px;
+  height: 2px;
   position: absolute;
   transition: all 0.2s linear;
-  background: #557de9;
+  background: black;
 }
 .btn-filtre::before, span::after{
   content:"";
-  width:5px;
+  width:2px;
   height:0;
   position: absolute;
   transition: all 0.2s linear;
-  background: #557de9;
+  background: black;
 }
 button:hover::before, button:hover::after{
   width: 100%;
@@ -371,9 +399,25 @@ button:hover span::before, button:hover span::after{
 /*-----nombre de matchs-------*/
 .nb-matchs{
 	font-family:'font2';
-	color: #557de9;
+	color: black;
 	font-size:12px;
     display: block;
 	margin-bottom:10px;
 }
+/*----side-ad-----*/
+#side_ad{
+	margin:30px;
+	font-family:'sporo';
+	font-size:40px;
+	position:fixed;
+	width: 100px;
+	overflow: auto;
+	height:260px;
+	background-color:white;
+	padding:30px;
+	text-align:center;
+	border:5px solid #557de9;
+	border-radius:4px;
+	z-index: 1; /* Le contenu doit s'afficher en arrière plan. */
+	}
   </style>

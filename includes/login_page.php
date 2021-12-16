@@ -12,8 +12,8 @@
 		<main>
 			<div id="login_block">
 				<div id="connexion" >Connexion</div>
-				<span style="color:white">Vous n'avez pas de compte? <a href="/freebet/includes/login_page.php">Inscrivez-vous</span></a>
-				<?php	global $db; ?>
+				<span style="color:white">Vous n'avez pas de compte? <a href="/freebet/includes/registration_page.php">Inscrivez-vous</span></a>
+				<?php global $db; ?>
 				<form method="post" class="login">
 				<div id="email_block">
 					<div id="svg">
@@ -34,7 +34,6 @@
 				<a href="/freebet/includes/password_forgot_page.php"><span>Mots de passe oublie?</span></a><br>
 				<br>
 				<br>
-				<br>
 					<input type="submit" name="formlogin" class="button" id="formlogin" value="Se connecter">
 				</form>
 				<?php require_once 'login.php'; ?>
@@ -52,12 +51,12 @@ body{
  background-attachment: fixed;
  background-size: cover;
  background-position: top;
- background-image:url("../skins/markus-spiske-BfphcCvhl6E-unsplash.jpg");
+ background-image:url("/freebet/skins/markus-spiske-BfphcCvhl6E-unsplash.jpg");
  width: 100%;
  height: 100%;
  letter-spacing: 0.02em;
   font-weight: 400;
- -webkit-font-smoothing: antialiased; 
+ -webkit-font-smoothing: antialiased;
 margin:0px;
 padding:0px;
 overflow: hidden;
@@ -84,7 +83,7 @@ div#login_block{
 .textfield{
 	border-top: hidden;
 	border-left: hidden;
-	border-right: hidden; 
+	border-right: hidden;
 	outline:none;
 	font-family: Exo2-Regular;
 	font-size: 15px;

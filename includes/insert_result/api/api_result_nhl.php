@@ -36,6 +36,7 @@
     <script src="../../ajax.js"></script>
 		<script src="../modify_name_result.js"></script>
     <script src="../insert/insert_result_nhl.js"></script>
+		<script src="../modify_name.js"></script>
 </body>
 
 </html>

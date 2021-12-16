@@ -25,7 +25,7 @@
       foreach ($answer as $ans) {
 
           if (($res['equipe_une'] == $ans['equipe_une'] && $res['equipe_deux'] == $ans['equipe_deux'] && $res['sport'] == $ans['sport'] && $res['ligue'] == $ans['ligue']) || ($res['equipe_une'] == $ans['equipe_deux'] && $res['equipe_deux'] == $ans['equipe_une'] && $res['sport'] == $ans['sport'] && $res['ligue'] == $ans['ligue'])) {
-						$query = $db->prepare("SELECT * FROM bet WHERE game_id = :game_id");
+            $query = $db->prepare("SELECT * FROM bet WHERE game_id = :game_id");
             $query->execute([
               'game_id' => $res['Id']
             ]);

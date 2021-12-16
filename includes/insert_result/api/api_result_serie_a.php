@@ -27,7 +27,7 @@
       <input type="text" name="home_team_result" id="home_team_result">
       <input type="text" name="visit_team_result" id="visit_team_result">
       <input type="text" name="visit_team" id="visit_team">
-      <input type="submit" name="result" id="result">
+      <input type="submit" name="result" id="resultat">
     </form>
 
     <?php require_once '../new/new_result_serie_a.php' ?>
@@ -36,7 +36,6 @@
     <script src="../../ajax.js"></script>
 		<script src="../modify_name_result.js"></script>
     <script src="../insert/insert_result_serie_a.js"></script>
-		<script src="../modify_name.js"></script>
 </body>
 
 </html>

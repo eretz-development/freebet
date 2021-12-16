@@ -41,5 +41,4 @@ function liste_match_foot(data){
     modify_team_name_soccer();
 
     document.getElementById("game").click();
-
 }

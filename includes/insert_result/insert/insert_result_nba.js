@@ -8,6 +8,7 @@ function liste_result_basket(data){
 
   var id = obj.teams[valeur_result_nba].idTeam;
   ajax_get_request(liste_result_basket_team,'https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id='+id,"async");
+  document.getElementById("result").click();
 }
 
 function liste_result_basket_team(data){

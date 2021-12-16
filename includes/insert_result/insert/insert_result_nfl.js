@@ -8,7 +8,7 @@ ajax_get_request(liste_result_foot_americain,'https://www.thesportsdb.com/api/v1
 
    var id = obj.teams[valeur_result_nfl].idTeam;
    ajax_get_request(liste_result_foot_americain_team,'https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id='+id,"async");
-
+   document.getElementById("result").click();
  }
 
  function liste_result_foot_americain_team(data){

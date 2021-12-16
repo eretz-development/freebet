@@ -8,7 +8,7 @@ function liste_result_foot(data){
 
   var id = obj.teams[valeur_result_bundesliga].idTeam;
   ajax_get_request(liste_result_foot_team,'https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id='+id,"async");
-
+  document.getElementById("result").click();
 }
 
 function liste_result_foot_team(data){

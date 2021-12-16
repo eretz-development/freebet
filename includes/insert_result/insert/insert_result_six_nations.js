@@ -8,6 +8,7 @@ function liste_result_rugby(data){
 
   var id = obj.teams[valeur_result_six_nations].idTeam;
   ajax_get_request(liste_result_rugby_team,'https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id='+id,"async");
+  document.getElementById("result").click();
 }
 
 function liste_result_rugby_team(data){

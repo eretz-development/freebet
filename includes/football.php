@@ -232,7 +232,7 @@
 						<button class="btn-6" id="btn-mise-2"><span class='cote2' id="equipe-mise-2"><span id='equipe2'><?php echo $res['equipe_deux'];?>  x</span><?php echo $res['cote_equipe_deux'];?></span></button>
 					</p>
 				<?php } else { ?>
-					<p><span class='cote' ><span id='equipe1'><?php echo $res['equipe_une'];?> x</span><?php echo $res['cote_equipe_une'];?></span><span class='cote'><span id='equipex'>Nul x</span><?php echo $res['cote_nul'];?></span><span class='cote' ><span id='equipe2'><?php echo $res['equipe_deux'];?>  x</span><?php echo $res['cote_equipe_deux'];?></span></p>	
+					<p><span class='cote' ><span id='equipe1'><?php echo $res['equipe_une'];?> x</span><?php echo $res['cote_equipe_une'];?></span><span class='cote'><span id='equipex'>Nul x</span><?php echo $res['cote_nul'];?></span><span class='cote' ><span id='equipe2'><?php echo $res['equipe_deux'];?>  x</span><?php echo $res['cote_equipe_deux'];?></span></p>
 				<?php } ?>
 				<?php if (isset($_SESSION['email'])){ ?>
 					<form name="miser" method="POST">

@@ -5,6 +5,11 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script data-ad-client="ca-pub-5520140392346899" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+		<script type="text/javascript">
+        document.oncontextmenu = new Function("return false");
+				document.onselectstart=new Function ("return false");
+    </script>
 	</head>
 
 	<body>
@@ -16,261 +21,247 @@
 	<p class="mise_error" id="mise_error"></p>
 
 	<main>
-
-	<content>
-
+		<content>
 			<div id='plus_de_point'>
-					<input type="submit" name='plus_pts' id="plus_pts" class='btn-ok' value='Plus de points' onclick="plus_pts()">
-          <form method="post" class="update">
-            <input type="submit" name="formsend_plus_pts" id="formsend_plus_pts" class="button" style="display:none"><br>
-          </form>
+				<?php include 'plus_de_point.php'; ?>
 			</div>
 
-      <?php include 'plus_de_point.php'; ?>
-	</content>
-
-	<div class='pub'>
-	<!-- click in text -->
-	<!-- <script type="text/javascript" src="//tags.clickintext.net/UojxcRIQE75zD" title="Interstitiel"></script> -->
-	</div>
-
+			<div id="video">
+				<p id="leaveButton" onclick="stop()" style="display:none; "><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ababab"><path d="M44.03365,26.46154c-1.91226,0 -3.64363,0.7494 -4.96154,2.06731l-10.54327,10.54327c-2.63581,2.63582 -2.63581,7.23558 0,10.54327l36.38462,36.38462l-36.38462,36.38462c-2.63581,3.30769 -2.63581,7.90746 0,10.54327l10.54327,10.54327c3.30769,2.63582 7.90746,2.63582 10.54327,0l36.38462,-36.38462l36.38462,36.38462c3.30769,2.63582 7.90746,2.63582 10.54327,0l10.54327,-10.54327c2.63582,-3.30769 2.63582,-7.90745 0,-10.54327l-36.38462,-36.38462l36.38462,-36.38462c2.63582,-3.30769 2.63582,-7.90745 0,-10.54327l-10.54327,-10.54327c-3.30769,-2.63581 -7.90745,-2.63581 -10.54327,0l-36.38462,36.38462l-36.38462,-36.38462c-1.65385,-1.31791 -3.66947,-2.06731 -5.58173,-2.06731z"></path></g></g></svg></p>
+				<video width="320" height="240" id="mavideo" controls>
+					<source src="video.mp4" type="video/mp4">
+					Your browser does not support the video.
+				</video>
+				<div class="controles" id="controles">
+				</div>
+				<div id="confirm_cancel_quit_video">
+					<span class="popuptext" id="myPopup">
+						<p>Etes-vous sur de vouloir quitter?<br />
+						Si vous quittez la video maintenant vous ne recevrez pas de points supplementaires.</p>
+						<button type="button" id="quit_video"><a id="quit" href="/freebet/includes/plus_de_point_page.php">Quitter</a></button>
+						<button type="button" id="quit_video" onclick="reprendre_video()">Continuer</button>
+					</span>
+				</div>
+			</div>
+		</content>
 	</main>
 
 	<footer>
 		<?php require_once 'footer.php'; ?><!--ethan-->
 	</footer>
 
-  <script type="text/javascript">
-    function plus_pts(){
-      document.getElementById('formsend_plus_pts').click();
-    }
+	<script type="text/javascript">
+		function launch() {
+			document.getElementById('video').style.display = "block";
+			lecteur.play();
+			document.getElementById('leaveButton').style.display = "block";
+		}
+		document.getElementById("mavideo").addEventListener("ended",function() {
+			document.getElementById('formsend_plus_pts').click();
+			document.getElementById('video').style.display = "block";
+		});
+		function lecture() {
+    		// Lit la vidéo
+    		lecteur.play();
+		}
+
+		function pause() {
+		    // Met la vidéo en pause
+		    lecteur.pause();
+		}
+
+		function stop() {
+			lecteur.pause();
+			document.getElementById("myPopup").style.display = "block";
+		}
+
+		var lecteur;
+
+		function creerBoutons() {
+		    // Crée les boutons de gestion du lecteur
+		    var btnLecture = document.createElement("button");
+		    var btnPause = document.createElement("button");
+		    var btnStop = document.createElement("button");
+			btnLecture.style.display = "none";
+			btnPause.style.display = "none";
+			btnStop.style.display = "none";
+
+		    var controlesBox = document.getElementById("controles");
+		    lecteur = document.getElementById("mavideo");
+
+		    // Ajoute un peu de texte
+		    btnLecture.textContent = "Lecture";
+		    btnPause.textContent = "Pause";
+		    btnStop.textContent = "Stop";
+
+		    // Ajoute les boutons à l'interface
+		    controlesBox.appendChild(btnLecture);
+		    controlesBox.appendChild(btnPause);
+		    controlesBox.appendChild(btnStop);
+
+		    // Lie les fonctions aux boutons
+		    btnLecture.addEventListener("click", lecture, false);
+		    btnPause.addEventListener("click", pause, false);
+		    btnStop.addEventListener("click", stop, false);
+
+		    // Affiche les nouveaux boutons et supprime l'interface originale
+		    controlesBox.removeAttribute("hidden");
+		    lecteur.removeAttribute("controls");
+			}
+
+			// Crée les boutons lorsque le DOM est chargé
+			document.addEventListener('DOMContentLoaded', creerBoutons, false);
+
+	    function plus_pts(){
+	      document.getElementById('formsend_plus_pts').click();
+	    }
+		function reprendre_video(){
+			lecteur.play();
+			document.getElementById('controles').style.display = "inline";
+			document.getElementById("myPopup").style.display = "none";
+		}
   </script>
 
 </body>
 </html>
 
 <style media="screen">
+@font-face{
+  font-family:'sporo';
+  src: url(/freebet/font/Exo_2/Exo2-Regular.ttf);
+}
 body{
 	margin:0px;
-	background-image: url("../img/rosie-yang-Zq4XzAkLjOE-unsplash.jpg");
-	background-color: #ffff; /* Used if the image is unavailable */
+	background-color: #214932; /* Used if the image is unavailable */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
 }
-
+#quit{
+	text-decoration:none;
+	color:black;
+}
 main{
 	margin-bottom: 60px;
 	margin-top:100px;
 	display:block;
+	font-family:'sporo';
+	color:white;
 	}
 
 #plus_de_point{
 	margin-top:30px;
-	margin-left:360px;
-	margin-right:30px;
+	margin-left:auto;
+	margin-right:auto;
 	padding:10px;
 	text-align:center;
-	background-color: white;
-	border:5px solid #557de9;
 	width:700px;
 	height: fit-content;
 	overflow:hidden;
 	border-radius: 4px;
 	line-height: 130%;
 }
-.equipe1, .equipe2{
-	font-family:'sporo';
-	font-size:35px;
+#play{
+	transition: transform 0.4s ease-in;
+	outline:none;
 }
-.vs, .date, .ligue{
-	font-family:'font2';
-	font-size:15px;
-}
-.date, #cotex, #cote2{
-	margin-left:20px;
-}
-
-#cote1,#cotex,#cote2{
-	border:3px dashed #557de9;
-	font-family:'font2';
-	font-size:20px;
-	width: 50px;
-	height: 20px;
-	border-radius: 4px;
-	padding:5px;
-	color:  #557de9;
-	text-align:center;
-
+#play:hover{
+	cursor:pointer;
+	transform: rotate(120deg);
 }
 form{
 	display:inline-block;
 }
-#resultat{
-	width: fit-content;
-	height: 40px;
-	border:3px solid #557de9;
-    border-radius: 4px;
-	font-family:'sporo';
-	outline:none;
-	cursor:pointer;
-	font-size: 20px;
 
-}
-.mise{
-	width: 80px;
-	height: 20px;
-	padding: 17px;
-    display: inline-block;
-	border:3px solid #557de9;
-    border-radius: 4px;
-    box-sizing: border-box;
-	font-family:'font2';
-	outline:none;
-}
-.btn-ok{
-	width: 130px;
-	height: 38px;
-	border:3px solid #557de9;
-    border-radius: 4px;
-	background-color: #557de9;
-    color: white;
-	text-align:center;
-	cursor:pointer;
-	font-family:'sporo';
-	font-size: 20px;
-	outline:none;
-}
-.btn-ok:hover{
-    background-color:#719CE1;
-}
-
-table {
-	font-family:'font2';
-	font-size: 20px;
-	color:white;
-	border:5px dashed white;
-	background-color: #557de9;
-}
-/*----nav-filtre-----*/
-.side_nav{
-	margin:30px;
-	font-family:'sporo';
-	font-size:40px;
-	position:fixed;
-	width: 300px;
-	overflow: auto;
-	height:460px;
-	background-color:white;
-	padding:30px;
-	text-align:center;
-	border:5px solid #557de9;
-	border-radius:4px;
-	z-index: 1; /* Le contenu doit s'afficher en arrière plan. */
-}
-.side_nav a{
-	text-decoration:none;
-	color:#557de9;
-}
-/*------btn-filtre------*/
-@import url(https://fonts.googleapis.com/css?family=PT+Sans);
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-button{
-  display: inline-block;
-  position: relative;
-  border: none;
-  cursor: pointer;
-  background: white;
-  margin-top:20px;
-}
-.btn-filtre{
-	font-family:'font2';
-	color: #557de9;
-	font-size:20px;
-    display: block;
-    padding: 15px 25px;
-}
-button::before, button::after{
-  content:"";
-  width: 0;
-  height: 5px;
-  position: absolute;
-  transition: all 0.2s linear;
-  background: #557de9;
-}
-.btn-filtre::before, span::after{
-  content:"";
-  width:5px;
-  height:0;
-  position: absolute;
-  transition: all 0.2s linear;
-  background: #557de9;
-}
-button:hover::before, button:hover::after{
-  width: 100%;
-}
-button:hover span::before, button:hover span::after{
-  height: 100%;
-}
-.btn-5::after{
-  left:0;
-  bottom: 0;
-  transition-duration: 0.4s;
-}
-.btn-5 span::after{
-  right:0;
-  top: 0;
-  transition-duration: 0.4s;
-}
-.btn-5::before{
-  right: 0;
-  top: 0;
-  transition-duration: 0.4s;
-}
-.btn-5 span::before{
-  left: 0;
-  bottom: 0;
-  transition-duration: 0.4s;
-}
-.btn-valider{
-	font-family:'sporo';
-	color: white;
-	font-size:20px;
-    display: block;
-    padding: 10px 20px;
-	border: none;
-    cursor: pointer;
-    margin-top:30px;
-    background: #557de9;
-	display:none;
-}
-/*-----nombre de plus_de_points-------*/
-.nb-plus_de_points{
-	font-family:'font2';
-	color: #557de9;
-	font-size:12px;
-    display: block;
-	margin-bottom:10px;
-}
 /*-----pub-----*/
-.pub{
-	margin-top:30px;
-	margin-right:auto;
-	margin-left:auto;
-	font-family:'sporo';
-	font-size:40px;
-	width: fit-content;
-	overflow: auto;
-	height: fit-content;
-	background-color:white;
-	padding:30px;
-	text-align:center;
-	border:5px solid #557de9;
+#video{
+	display:none;
+	background-color: rgba(85,85,85,0.9);
+	text-align: center;
+	border-radius: 6px;
+	position: absolute;
+	top:0;
+	width:100vw;
+	height:100vh;
+	margin:0;
+	padding: 0;
+	z-index:2;
+}
+#video video{
+	width:50%;
+	height:auto;
+	margin-top:110px;
+}
+#leaveButton{
+	position:absolute;
+	right:0;
+	margin:50px;
+}
+#leaveButton:hover{
+	cursor:pointer;
+}
+/* Popup container - can be anything you want */
+#confirm_cancel_quit_video{
+	position: absolute;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	top:0;
+	left:0;
+	margin:0;
+	padding: 0;
+	margin-top:19%;
+  	margin-left:31%;
+}
+/* The actual popup */
+#confirm_cancel_quit_video .popuptext {
+  display: none;
+  width: 500px;
+  background-color: rgba(0,0,0,0.9);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+}
+
+/* Popup arrow */
+#confirm_cancel_quit_video .popuptext::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+#confirm_cancel_quit_video .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+#quit_video{
+	outline:none;
+	border: 1px solid white;
 	border-radius:4px;
-	z-index: 1; /* Le contenu doit s'afficher en arrière plan. */
-	}
+	color:black;
+	font-size: 14px;
+	background-color:white;
+	padding:2px;
+	margin:2px;
+	font-family:'sporo';
+}
   </style>

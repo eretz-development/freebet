@@ -7,7 +7,6 @@
 
 <body>
   	<!-- haut de page -->
-
 	<?php
 	  include 'database.php';
 	  global $db;
@@ -24,12 +23,12 @@
 							<a href="/freebet/includes/football.php">Football</a>
 							<a href="/freebet/includes/basket_ball.php">Basketball</a>
 							<a href="/freebet/includes/rugby.php">Rugby</a>
-							<a href="/freebet/includes/american_football.php">Hockey</a>
-							<a href="/freebet/includes/hockey.php">Football Americain</a>
+							<a href="/freebet/includes/hockey.php">Hockey</a>
+							<a href="/freebet/includes/american_football.php">Football Américain</a>
 						</div>
 					</li>
 					<li><a href="/freebet/includes/recompense_page.php">R<span class="char">%C3%A9c</span>ompenses</a></li>
-					<li><a href="/freebet/includes/contact.php">Contacts</a></li>
+					<li><a href="/freebet/includes/plus_de_point_page.php">Plus de points</a></li>
 				</ul>
 			</div>
 			<div class="user">
@@ -44,9 +43,8 @@
 							<br>
 							<a href="/freebet/includes/profile_parameter_page.php">Parametres</a>
 							<a href="/freebet/includes/bet_page.php">Mes paris</a>
-							<a href="/freebet/includes/plus_de_point_page.php">Plus de points</a>
 							<br>
-							<?php require_once 'includes/deconnexion.php'; ?>
+							<?php require_once 'deconnexion.php'; ?>
 						</div>
 					</li>
 				</ul>
@@ -59,12 +57,11 @@
 							<a href="/freebet/includes/football.php">Football</a>
 							<a href="/freebet/includes/basket_ball.php">Basketball</a>
 							<a href="/freebet/includes/rugby.php">Rugby</a>
-							<a href="/freebet/includes/american_football.php">Hockey</a>
-							<a href="/freebet/includes/hockey.php">Football Americain</a>
+							<a href="/freebet/includes/hockey.php">Hockey</a>
+							<a href="/freebet/includes/american_football.php">Football Américain</a>
 						</div>
 					</li>
 					<li><a href="/freebet/includes/recompense_page.php">R<span class="char">%C3%A9c</span>ompenses</a></li>
-					<li><a href="/freebet/includes/contact.php">Contacts</a></li>
 				</ul>
 			</div>
 			<div class="user">
@@ -90,9 +87,9 @@ html{
 	height: 100%;
 }
 
-body { 
-	margin: 0px; 
-	padding: 0px; 
+body {
+	margin: 0px;
+	padding: 0px;
 	width: 100%;
 	height: 100%;
 }
@@ -110,7 +107,7 @@ body {
 	  display: block;
 	}
   }
-  
+
   @media screen and (max-width: 600px) {
 	.topnav.responsive {position: relative;}
 	.topnav.responsive .icon {
@@ -142,8 +139,6 @@ li{
 	height:80px;
 	position: sticky;
 	top: 0;
-	padding-top:10px;
-	padding-bottom:10px;
 	backdrop-filter: blur(10px);
 	z-index: 2;
 }
@@ -152,8 +147,8 @@ li{
 	margin-right:auto;
 	margin-left: auto;
 	height:fit-content;
-	margin-top: auto;
-	margin-bottom: auto;
+	margin-top:20px;
+	margin-bottom:10px;
 }
 .titre a{
 	font-family: Exo2-Regular;
@@ -164,24 +159,22 @@ li{
 }
 .titre a:hover{
 	color: #d6d6d6;
-
 }
 
 .nav{
 	margin-right:auto;
 	margin-left: auto;
-	height:fit-content;
+	height:min-content;
 	margin-top: auto;
 	margin-bottom: auto;
+	font-size:25px;
 }
 .nav ul a {
 	font-family: Exo2-Regular;
-	font-size: 25px;
 	color:#ffffff;
 	cursor: pointer;
 	transition: all 0.2s;
 	text-decoration: none;
-	
 }
 .nav li{
 	display: inline-block;
@@ -209,7 +202,7 @@ li{
 }
 
 .dropdown-content a {
-	font-size: 25px;
+	font-size: 20px;
 	color: white;
 	display: block;
 	text-align: left;
@@ -228,9 +221,11 @@ li{
 .user{
 	margin-right:auto;
 	margin-left: auto;
-	height:fit-content;
-	margin-top: auto;
-	margin-bottom: auto;
+	margin-top:0px;
+	margin-bottom:10px;
+}
+.user svg{
+
 }
 .user ul a {
 	font-family: Exo2-Regular;
@@ -244,11 +239,12 @@ li{
 	color: #d6d6d6;
 }
   .dropdown-user {
+	left:84.3%;
 	position: absolute;
 	display: none;
 	z-index: 1;
 	padding: 10px;
-	width: fit-content;
+	width: 150px;
 	border-radius: 5px;
 	border: 2px solid white;
 	background-color:rgba(0, 0, 0, 0.8);
@@ -264,10 +260,10 @@ li{
   .dropdown-user a:hover {
 	color: #d6d6d6;
   }
-  
+
     .dropdown2:hover .dropdown-user {
 	display:block;
 	cursor: pointer;
-	
+
   }
 </style>

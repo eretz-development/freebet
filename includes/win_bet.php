@@ -25,7 +25,7 @@
       foreach ($answer as $ans) {
 
           if (($res['equipe_une'] == $ans['equipe_une'] && $res['equipe_deux'] == $ans['equipe_deux'] && $res['sport'] == $ans['sport'] && $res['ligue'] == $ans['ligue']) || ($res['equipe_une'] == $ans['equipe_deux'] && $res['equipe_deux'] == $ans['equipe_une'] && $res['sport'] == $ans['sport'] && $res['ligue'] == $ans['ligue'])) {
-            $query = $db->prepare("SELECT * FROM bet WHERE game_id = :game_id");
+						$query = $db->prepare("SELECT * FROM bet WHERE game_id = :game_id");
             $query->execute([
               'game_id' => $res['Id']
             ]);
@@ -34,7 +34,7 @@
             $equipe_gagnante;
             if($ans['score_equipe_une'] > $ans['score_equipe_deux']){
               $equipe_gagnante = $ans['equipe_une'];
-            }else {
+            } elseif ($ans['score_equipe_une'] < $ans['score_equipe_deux']) {
               $equipe_gagnante = $ans['equipe_deux'];
             }
 
@@ -64,29 +64,34 @@
             		$ns = htmlspecialchars($new_stack);
             		$insertstack = $db->prepare("UPDATE user_stack SET stack = ? WHERE pseudo = ?");
             		$insertstack->execute(array($ns, $rq['pseudo']));
-              }
-
-							$delete_game = $db->prepare("DELETE FROM game WHERE Id = :Id ");
-							$delete_game->execute([
-								'Id' => $rq['game_id']
-							]);
+              } else {
+								$win_bet = $db->prepare("INSERT INTO loose_bet(pseudo,game_id,resultat,perdant,domicile,mise,cote) VALUES(:pseudo,:game_id,:resultat,:perdant,:domicile,:mise,:cote)");
+								$win_bet->execute([
+									'pseudo' => $rq['pseudo'],
+									'game_id' => $rq['game_id'],
+								  'resultat' => $rq['resultat'],
+									'perdant' => $rq['perdant'],
+									'domicile' => $rq['domicile'],
+								  'mise' => $rq['mise'],
+									'cote' => $rq['cote']
+								]);
+							}
 
 							$delete_bet = $db->prepare("DELETE FROM bet WHERE Id = :Id ");
-					    $delete_bet->execute([
+							$delete_bet->execute([
 								'Id' => $rq['Id']
 							]);
 
-							$delete_result = $db->prepare("DELETE FROM result WHERE sport = :sport AND ligue = :ligue AND equipe_une = :equipe_une AND equipe_deux = :equipe_deux ");
-					    $delete_result->execute([
-								'sport' => $res['sport'],
-								'ligue' => $res['ligue'],
-								'equipe_une' => $res['equipe_une'],
-								'equipe_deux' => $res['equipe_deux']
-							]);
-
             }
-          }
 
+						$delete_result = $db->prepare("DELETE FROM result WHERE sport = :sport AND ligue = :ligue AND equipe_une = :equipe_une AND equipe_deux = :equipe_deux ");
+					  $delete_result->execute([
+							'sport' => $res['sport'],
+							'ligue' => $res['ligue'],
+							'equipe_une' => $res['equipe_une'],
+							'equipe_deux' => $res['equipe_deux']
+						]);
+          }
       }
     }
 

@@ -29,6 +29,7 @@
       <input type="text" name="home_team_odd" id="home_team_odd">
       <input type="text" name="visit_team_odd" id="visit_team_odd">
       <input type="text" name="visit_team" id="visit_team">
+			<input type="text" name="date_game" id="date_game">
       <input type="submit" name="game" id="game">
     </form>
 
@@ -36,6 +37,7 @@
 
     <script src="../../jquery-3.4.1.js"></script>
     <script src="../../ajax.js"></script>
+		<script src="../modify_name_game.js"></script>
     <script src="../insert/insert_game_nhl.js"></script>
 </body>
 

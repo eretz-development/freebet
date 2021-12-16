@@ -14,20 +14,20 @@
 
 	<main>
             <h1>Contactez nous</h1>
-            <p>Pour toutes questions. problemes ou recommendations,<br>vous pouvez nous contactez via le formulaire ci dessous et nous vous repondrons avec plaisir dans les plus bref delais</p>
+            <p>Pour toutes questions, problemes ou recommendations,<br>vous pouvez nous contacter via le formulaire ci dessous !</p>
 				<!-- Main -->
 					<div id="main">
 						<!-- Content -->
 								<form method="post" id="form" action="cible_form.php">
 									<fieldset>
-										<p><label for="nom">Name</label></p>
+										<p><label for="nom">Nom</label></p>
 										<input type="text" id="nom" name="nom" />
 										<p><label for="email">Email</label></p>
 										<input type="text" id="email" name="email" />
-										<p><label for="objet">Object</label></p>
+										<p><label for="objet">Objet</label></p>
 										<input type="text" id="objet" name="objet" />
 										<p><label for="message">Message</label></p>
-										<textarea id="message" name="message" cols="30" rows="8"></textarea>
+										<textarea id="message" name="message" cols="30" rows="5"></textarea>
 									<!--
 									<input type="checkbox" name="confirmation" id="confirmation">
 									<label for="confirmation">M'envoyer un courriel de confirmation</label>
@@ -50,7 +50,6 @@
 								</form>
 						    </div>
                     	</main>
-
 	<footer>
 		<?php require_once 'footer.php'; ?><!--ethan-->
 	</footer>
@@ -62,26 +61,30 @@
 body{
 	text-align:center;
 	margin:0px;
+	background-color:#7EA5FF;
 }
 
 main{
 	height:min-content;
 	margin-right:auto;
 	margin-left:auto;
-	margin-top:100px;
-	margin-bottom:100px;
 	display:block;
-	
+
 	}
 main h1{
-	font-family:'sporo';
-	color: #557de9;
-	font-size:40px;
+	font-family: Exo2-Regular;
+	color: white;
+	font-size:30px;
 }
 main p{
-    font-family:'sporo';
-	color: #557de9;
-	font-size:25px;
+	font-family: Exo2-Regular;
+	color: white;
+	font-size:20px;
+}
+main label{
+	font-family: Exo2-Regular;
+	color: white;
+	font-size:17px;
 }
 
 fieldset{
@@ -91,33 +94,31 @@ fieldset{
 }
 input{
 	border-style: solid;
-	border-color:#557de9;
 	outline: none;
 	padding: 4px;
 	border-radius: 4px;
 	resize: vertical;
-	width:200px;
-
+	width:300px;
+	border: none;
 }
 textarea{
 	border:2px solid;
-	border-color:#557de9;
 	outline: none;
 	padding: 4px;
 	border-radius: 4px;
 	resize: vertical;
 	width:400px;
-
+	border: none;
 }
 
 input[type='submit']{
 	margin-right:auto;
 	margin-left:auto;
-    font-family:'sporo';
+	font-family: Exo2-Regular;
 	color: white;
 	font-size:20px;
     display: block;
-    padding: 10px 20px;
+    padding: 10px 10px;
 	border: none;
     cursor: pointer;
     margin-top:25px;
@@ -125,7 +126,7 @@ input[type='submit']{
 }
 
 input[type='submit']:hover{
-        background-color:#719CE1;
-		transition: 0.2s all;
+        background-color:#7EA5FF;
+		transition: 0.4s all;
 	}
   </style>

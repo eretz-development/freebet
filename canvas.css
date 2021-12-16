@@ -3,10 +3,9 @@ html{
 	height: 100%;
 	overflow: hidden;
 }
-
-body { 
-	margin: 0px; 
-	padding: 0px; 
+body {
+	margin: 0px;
+	padding: 0px;
 	font-family:"Arial";
 	width: 100%;
 	background-color:black; /*overflow-x:hidden;*/
@@ -157,7 +156,7 @@ a{
 }
 
 
-#s_inscrire { 
+#s_inscrire {
 	display: flex;
 	background: transparent;
 	width: 300px;
@@ -168,25 +167,25 @@ a{
 	.btn-1{
 	font-family: Exo2-Regular;
 	font-size: 20px;
-	text-align: center; 
+	text-align: center;
 	color: #fff;
 	cursor: pointer;
 	font-weight: 400;
 	line-height: 45px;
-	max-width: 160px; 
+	max-width: 160px;
 	position: relative;
 	text-decoration: none;
 	text-transform: uppercase;
-	width: 100%; 
+	width: 100%;
 	}
 	  .btn-1 svg {
 		height: 45px;
 		left: 0;
 		position: absolute;
-		top: 0; 
-		width: 100%; 
+		top: 0;
+		width: 100%;
 	  }
-	  
+
 	  rect {
 		fill: none;
 		stroke: #fff;
@@ -194,19 +193,19 @@ a{
 		stroke-dasharray: 422, 0;
 		transition: all 0.35s linear;
 	  }
-	
-	
+
+
 	.btn-1:hover {
         font-weight: 900;
 		letter-spacing: 1px;}
-	  
+
 	  .btn-1:hover rect {
 		stroke-width: 5;
 		stroke-dasharray: 15, 310;
 		stroke-dashoffset: 48;
 		transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
 	  }
-	
+
 @keyframes jump {
 	0% { top: 0; } 50% { top: 15px; } 100% { top: 0; }
   }
@@ -217,7 +216,7 @@ a{
 	text-align: center;
 	animation: jump 2s infinite;
   }
-  
+
 
 /* #les_10_paris_les_plus_jou_s {
 	top: 210px;
@@ -316,7 +315,7 @@ a{
 	margin-right:auto;
 	margin-left:auto;
 	width:fit-content;
-	height:fit-content;	
+	height:fit-content;
 }
 #giftcard img{
 	transform: translateZ(.25px) scale(.75) translateX(auto) translateY(auto) rotate(2deg);
@@ -351,7 +350,7 @@ a{
 	top: 120px;
 	left: 345px;
 	position: absolute;
-	
+
 }
 #_10__ek1 {
 

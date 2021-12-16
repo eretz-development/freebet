@@ -1,4 +1,7 @@
-<?php
+<body>
+	<br>
+	<div id="alert">
+		<?php
 		if (isset($_POST['formsend'])){
 
 			extract($_POST);
@@ -45,50 +48,60 @@
 								'stack' => $base_stack
 							]);
 
-							?><meta http-equiv="refresh" content="0.0001;URL=/freebet/"><?php						
-						
+							?>
+							<meta http-equiv="refresh" content="5;URL=/freebet/">
+							<main>
+							<?php
+
 						// Préparation du mail contenant le lien d'activation
 						$destinataire = $email;
 						$sujet = "Activer votre compte" ;
-						$entete = "From: inscription@freebet.com" ;
-						
+						$mail = "inscription@freebet.com" ;
+						$entete = 'From: '.$mail."\nContent-Type: text/html; charset=iso-8859-1";
+
 						// Le lien d'activation est composé du pseudo(log) et de la clé(cle)
-						$message = 'Bienvenue sur freebet,
-						
-						Pour activer votre compte, veuillez cliquer sur le lien ci-dessous
-						ou copier/coller dans votre navigateur Internet.
-						
-						http://eretz-development.com/freebet/includes/validation.php?log='.urlencode($pseudo).'
-						
-						
+						$message = '
+						<h1>Bienvenue sur Freebet,</h1>
+
+						Pour activer votre compte, veuillez cliquer ci-dessous.<br><a href="http://eretz-development.com/freebet/includes/validation.php?log='.urlencode($pseudo).'">Cliquez ici</a><br>
 						---------------
-						Ceci est un mail automatique, Merci de ne pas y répondre.';
-												
-						//...    
-						// Fermeture de la connexion    
+						<br>Ceci est un mail automatique, Merci de ne pas y répondre.';
+						?></main><?php
+						//...
+						// Fermeture de la connexion
 						//...
 						mail($destinataire, $sujet, $message, $entete) ; // Envoi du mail
-						echo '<script type="text/javascript">alert("Un mail vous a ete envoye, verifiez votre boite de reception pour confirmer votre inscription");</script>';
-							exit();
-
+						echo 'Un mail vous a été envoyé, vérifiez votre boite de réception pour confirmer votre inscription';
 						} else {
-							echo '<script type="text/javascript">alert("Ce nom est deja utilisé");</script>';
+							echo 'Ce nom est dejà utilisé';
 						}
-					
-			
 					}
 
 					else{
-						echo '<script type="text/javascript">alert("Cet email existe deja");</script>';
+						echo 'Cet E-mail est dejà utilisé';
 					}
 				}
 
 				else{
-					echo '<script type="text/javascript">alert("Les deux mots de passe ne sont pas indentiques");</script>';
+					echo 'Les mots de passe sont différents';
 				}
 
 			}
 
 			}
 				//...
-		?>	
+		?>
+	</div>
+</body>
+
+<style media="screen">
+@font-face{
+  font-family:'sporo';
+  src: url(/freebet/font/Exo_2/Exo2-Regular.ttf);
+}
+#alert{
+	font-size:20px;
+	color:white;
+	font-family:'sporo';
+}
+</style>
